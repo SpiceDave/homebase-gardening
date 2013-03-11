@@ -2,15 +2,46 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<title>Test</title>
+
 <script type="text/javascript" src="javascript/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="javascript/jquery.collage.js"></script>
+<script type="text/javascript" src="javascript/jquery.hoverintent.min.js"></script>
+<script type="text/javascript" src="javascript/jquery.jsquares.js"></script>
+
+<link rel="stylesheet" type="text/css" href="stylesheets/jsquares.css">
 
 </head>
 
 <body>
-<div id="container">
-  <div><img src="images/1.jpg" /></div>
+<div id="container"> 
+
+	<div class="js-image">		
+		<a href="#wolf!"><img class="js-small-image" src="images/1.jpg"/></a>
+		<div class="js-small-caption">
+			<span>Howlla at cha boy!</span>
+		</div>
+		<div class="js-overlay-caption-content">
+			<h4>You can't hide from wolf boy.</h4>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum arcu non orci fermentum nec suscipit neque dignissim... <a href="#">Read more &raquo;</a>
+			</p>
+		</div>
+	</div>
+    
+    <div class="js-image">		
+		<a href="#wolf!"><img class="js-small-image" src="images/3.jpg"/></a>
+		<div class="js-small-caption">
+			<span>Howlla at cha boy!</span>
+		</div>
+		<div class="js-overlay-caption-content">
+			<h4>You can't hide from boy wold.</h4>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum arcu non orci fermentum nec suscipit neque dignissim... <a href="#">Read more &raquo;</a>
+			</p>
+		</div>
+	</div>
+    
+ <!-- <div><img src="images/1.jpg" /></div>
   <div><img src="images/2.jpg" /></div>
   <div><img src="images/3.jpg" /></div>
   <div><img src="images/4.jpg" /></div>
@@ -24,8 +55,12 @@
   <div><img src="images/12.jpg" /></div>
   <div><img src="images/13.jpg" /></div>
   <div><img src="images/14.jpg" /></div>
-  <div><img src="images/15.jpg" /></div>
+  <div><img src="images/15.jpg" /></div>-->
 </div>
 </body>
 </html>
-<script>$("#container").collagize();</script>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('#container').jsquares();
+	});
+</script>
