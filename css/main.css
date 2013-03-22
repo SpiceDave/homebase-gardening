@@ -105,7 +105,7 @@ textarea {
 	height: 15px;
 	float: left;
 }
-#fb-mosaic.img{
+.mCell.img{
 	opacity:0.6;
 	filter:alpha(opacity=6);
 }

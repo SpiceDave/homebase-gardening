@@ -70,6 +70,8 @@
 			  var j:int = 1;
 			  var color:String;
 			  var imgCellCode:String;
+			  var liveCellClass:String;
+			  var _data:String;
 			  
 			  _html = '<div style="width:'+ MOSAIC_WIDTH +'px; position:relative">';
 			  //add the colors metadata to the shuffled records
@@ -97,12 +99,15 @@
 					{
 					  	var imgOutArray:Array =  ('img/target/'+ submission[i].image).split('.');
 						imgCellCode = '<img src="'+imgOutArray[0]+'_c.jpg"/>';
+						liveCellClass = ' live-cell';
+						_data = ' data-name="'+submission[i].name+'data-copy="'+submission[i].copy+'data-tag="'+submission[i].tag+'data-image="'+imgOutArray[0]+'_c.jpg" ';				
 					}
 					else
+					{
 						imgCellCode = '';
-					
-					  
-					  _html += '<div class="mCell" id="' + i + '" style="background-color:#' + submission[i].color + ';">'+ imgCellCode + '</div>';
+						liveCellClass = ' live-cell';
+					}
+					  _html += '<div class="mCell'+ liveCellClass +'" id="' + i + '"' + _data + ' style="background-color:#' + submission[i].color + ';">'+ imgCellCode + '</div>';
 				  }
 				  j++;
 				 

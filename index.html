@@ -38,7 +38,15 @@
         <script>
 			jQuery(document).ready(function(){
 				jQuery('#fb-mosaic').load('html/mozaic.html', function(e) {
-					alert('complete');
+					//remove loading image if needed
+				});
+				jQuery('.live-Cell').bind({
+					mouseenter: function() {
+						console.log(jQuery(this).attr('data-name'));
+					},
+					mouseleave: function() {
+					// do something on mouseenter
+					}
 				});
 			});
 		</script>
