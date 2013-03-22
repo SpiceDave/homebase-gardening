@@ -100,7 +100,7 @@
 					  	var imgOutArray:Array =  ('img/target/'+ submission[i].image).split('.');
 						imgCellCode = '<img src="'+imgOutArray[0]+'_c.jpg"/>';
 						liveCellClass = ' live-cell';
-						_data = ' data-name="'+submission[i].name+'data-copy="'+submission[i].copy+'data-tag="'+submission[i].tag+'" data-image="'+imgOutArray[0]+'_c.jpg" ';				
+						_data = ' data-name="'+submission[i].name;//+'" data-copy="'+submission[i].copy+'" data-tag="'+submission[i].tag+'" data-image="'+imgOutArray[0]+'_c.jpg" ';				
 					}
 					else
 					{
