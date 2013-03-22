@@ -105,9 +105,10 @@ textarea {
 	height: 15px;
 	float: left;
 }
-.mCell.img{
+.mCell img{
 	opacity:0.6;
 	filter:alpha(opacity=6);
+	vertical-align: top;
 }
 .live-cell{
 	cursor:pointer;
