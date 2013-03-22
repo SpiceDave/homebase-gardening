@@ -109,6 +109,9 @@ textarea {
 	opacity:0.6;
 	filter:alpha(opacity=6);
 }
+.live-cell{
+	cursor:pointer;
+}
 
 
 
