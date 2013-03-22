@@ -93,8 +93,22 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
-
+.fb-head-wrapper{
+	width:810px;
+	height:130px;
+}
+#fb-mosaic{
+	width:810px;
+}
+.mCell {
+	width: 15px;
+	height: 15px;
+	float: left;
+}
+#fb-mosaic.img{
+	opacity:0.6;
+	filter:alpha(opacity=6);
+}
 
 
 

@@ -71,7 +71,7 @@
 			  var color:String;
 			  var imgCellCode:String;
 			  
-			  _html = '<html><head><style>img{opacity:0.6;filter:alpha(opacity=6);}</style></head><body><div style="width:'+ MOSAIC_WIDTH +'px; position:relative">';
+			  _html = '<div style="width:'+ MOSAIC_WIDTH +'px; position:relative">';
 			  //add the colors metadata to the shuffled records
 			  for(var i:int = 0; i<TILE_NO; i++)
 			  {
@@ -102,12 +102,12 @@
 						imgCellCode = '';
 					
 					  
-					  _html += '<div class="mCell" id="' + i + '" style="width:'+TILE_SIZE+'px; height:'+TILE_SIZE+'px; background-color:#' + submission[i].color + '; float:left">'+ imgCellCode + '</div>';
+					  _html += '<div class="mCell" id="' + i + '" style="background-color:#' + submission[i].color + ';">'+ imgCellCode + '</div>';
 				  }
 				  j++;
 				 
 			  }
-			  _html += '</div></body></html>';
+			  _html += '</div>';
 			  writeHTML(_html);
 			  createImages(); 
 		}
