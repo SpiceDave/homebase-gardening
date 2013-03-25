@@ -120,6 +120,19 @@ textarea {
 	position:relative;
 	top:0px;
 	left:0px;
+	
+	-moz-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+	
+	/* For IE 8 */
+	
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color='#000000')";
+	
+	/* For IE 5.5 - 7 */
+	
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color='#000000');
+	
 }
 #mosaic-container{
 	position:absolute;

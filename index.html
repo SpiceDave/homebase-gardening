@@ -30,32 +30,73 @@
             </div>
         </div>
 
-		<div id="pop-out"><img src="" title="" alt="" height="172" width="430" /></div>
+		<div id="pop-out"><img src="apple-touch-icon.png" alt="" width="430" height="172" usemap="#Map" title="" />
+          <map name="Map">
+            <area shape="rect" coords="345,0,430,30" href="#" onClick="closeX()">
+          </map>
+		</div>
         
         
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         
         <script>
+		jQuery('#pop-out').hide();
+
 			jQuery(document).ready(function(){
 				jQuery('#fb-mosaic').load('html/mozaic.html', function(e) {
+					var mWidth = jQuery('#fb-mosaic').width();
+					var mHeight = jQuery('#fb-mosaic').height();
 					jQuery('.live-cell').on('mouseenter',function() {
-						console.log(jQuery(this).attr('id'));
+						/*console.log(jQuery(this).attr('id'));
 						console.log(jQuery(this).attr('data-name'));
 						console.log(jQuery(this).attr('data-tag'));
-						console.log(jQuery(this).attr('data-image'));
+						console.log(jQuery(this).attr('data-image'));*/
+												
+						jQuery('#pop-out img').attr('src',jQuery(this).attr('data-image')).attr('title', jQuery(this).attr('data-tag'));
+					
+						var cell = jQuery(this);
+						var pos = cell.position();
 						
-						jQuery('#pop-out img').attr('src',jQuery(this).attr('data-image'));
+						//normalise the pop-up box postion
+						var top = pos.top;
+						var left = pos.left;
 						
+						if(top > mHeight-200)
+						{
+							top = mHeight-200;
+						}
+						if(top < 28)
+						{
+							top = 28;
+						}
+						if(left > mWidth-458)
+						{
+							left = mWidth-458;
+						}
+						if(left < 28)
+						{
+							left = 28;
+						}
+						
+						
+					
+						popUpBox(top, left);
 					});
 				});
 			});
 			
 			
-			function popUpBox(){
-				
+			function popUpBox(top, left){
+				jQuery('#pop-out').clearQueue().hide('fast', function(){
+					jQuery('#pop-out').delay(500).css({'top':top + 'px', 'left':left}).show('fast');
+				});
+			}
+			
+			function closeX(){
+				jQuery('#pop-out').clearQueue().hide('fast');
 			}
 		</script>
         
