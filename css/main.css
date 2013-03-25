@@ -113,6 +113,17 @@ textarea {
 .live-cell{
 	cursor:pointer;
 }
+#pop-out{
+	background-color:white;
+	width:430px;
+	height:172px;
+	position:relative;
+	top:0px;
+	left:0px;
+}
+#mosaic-container{
+	position:absolute;
+}
 
 
 

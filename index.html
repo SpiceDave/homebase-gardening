@@ -21,13 +21,16 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <div id="fb-contatiner">
+        <div id="fb-container">
         	<header>
             	<div class="fb-head-wrapper">Explore the picture garden</div>
             </header>
-            <div id="fb-mosaic"></div>
+            <div id="mosaic-container">
+            	<div id="fb-mosaic"></div>
+            </div>
         </div>
 
+		<div id="pop-out"><img src="" title="" alt="" height="172" width="430" /></div>
         
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -38,18 +41,22 @@
         <script>
 			jQuery(document).ready(function(){
 				jQuery('#fb-mosaic').load('html/mozaic.html', function(e) {
-					//remove loading image if needed
-				});
-				jQuery('.live-Cell').bind({
-					mouseenter: function() {
+					jQuery('.live-cell').on('mouseenter',function() {
+						console.log(jQuery(this).attr('id'));
 						console.log(jQuery(this).attr('data-name'));
-					},
-					mouseleave: function() {
-					// do something on mouseenter
-						console.log('works');
-					}
+						console.log(jQuery(this).attr('data-tag'));
+						console.log(jQuery(this).attr('data-image'));
+						
+						jQuery('#pop-out img').attr('src',jQuery(this).attr('data-image'));
+						
+					});
 				});
 			});
+			
+			
+			function popUpBox(){
+				
+			}
 		</script>
         
         
