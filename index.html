@@ -31,6 +31,7 @@
               cookie     : true, // set sessions cookies to allow your server to access the session?
               xfbml      : true  // parse XFBML tags on this page?
             });
+			FB.Canvas.setSize({ height: 780 });
         
             // Additional initialization code such as adding Event Listeners goes here
         
@@ -89,8 +90,7 @@
 
 			jQuery(document).ready(function(){
 				jQuery('#fb-mosaic').load('html/mozaic.html', function(e) {
-					
-					FB.Canvas.setSize({ height: 800 });
+				
 					var mWidth = jQuery('#fb-mosaic').width();
 					var mHeight = jQuery('#fb-mosaic').height();
 					jQuery('.live-cell').on('mouseenter',function() {
