@@ -97,8 +97,12 @@ textarea {
 	width:810px;
 	height:130px;
 }
+#garden-thumb{
+	float:left;
+}
 #fb-mosaic{
 	width:810px;
+
 }
 .mCell {
 	width: 15px;
@@ -137,6 +141,18 @@ textarea {
 #mosaic-container{
 	position:absolute;
 }
+.border{
+	background-color:#374600; position:absolute;
+}
+#t, #b{width:100%; height:1px;}
+#r, #l{height:555px; width:1px; }
+#t{top:0px;}
+#r{right:0px; top:0px}
+#b{bottom:0px;}
+#l{left:0px; top:0px}
+
+
+
 
 
 
