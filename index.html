@@ -26,12 +26,12 @@
             // init the FB JS SDK
             FB.init({
               appId      : '544915695549363', // App ID from the App Dashboard
-              channelUrl : 'channel.html', // Channel File for x-domain communication
+              channelUrl : 'https://homebase-gardening.herokuapp.com/channel.html', // Channel File for x-domain communication
               status     : true, // check the login status upon init?
               cookie     : true, // set sessions cookies to allow your server to access the session?
               xfbml      : true  // parse XFBML tags on this page?
             });
-			setTimeout(function(){FB.Canvas.setSize({ height: 800 })}, 1000);
+			setTimeout(function(){FB.Canvas.setSize({ height: 1000 })}, 1000);
           };
 
         </script>
