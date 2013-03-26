@@ -97,7 +97,7 @@ textarea {
 	width:810px;
 	height:130px;
 }
-#garden-thumb{
+#garden-thumb, #head-copy, #search-box{
 	float:left;
 }
 #fb-mosaic{
@@ -151,7 +151,20 @@ textarea {
 #b{bottom:0px;}
 #l{left:0px; top:0px}
 
-
+#footer-wrap{
+	top:555px;
+	position:relative;
+}
+#_footer{
+	width:810px;
+	height:57px;
+	background-color:black;
+}
+#_d-shadow{
+	background-image:url(../img/ancillary/drop-shadow.jpg);
+	width:810px;
+	height:21px;
+}
 
 
 

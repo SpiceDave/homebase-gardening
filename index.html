@@ -20,11 +20,39 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+        <div id="fb-root"></div>
+		<script>
+          window.fbAsyncInit = function() {
+            // init the FB JS SDK
+            FB.init({
+              appId      : '544915695549363', // App ID from the App Dashboard
+              //channelUrl : 'channel.html', // Channel File for x-domain communication
+              status     : true, // check the login status upon init?
+              cookie     : true, // set sessions cookies to allow your server to access the session?
+              xfbml      : true  // parse XFBML tags on this page?
+            });
+        
+            // Additional initialization code such as adding Event Listeners goes here
+        
+          };
+        
+          // Load the SDK's source Asynchronously
+          // Note that the debug version is being actively developed and might 
+          // contain some type checks that are overly strict. 
+          // Please report such bugs using the bugs tool.
+          (function(d, debug){
+             var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement('script'); js.id = id; js.async = true;
+             js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
+             ref.parentNode.insertBefore(js, ref);
+           }(document, /*debug*/ false));
+        </script>
 
         <div id="fb-container">
         	<header>
                 <div id="garden-thumb"><img src="img/ancillary/GardenImgThumb.jpg" alt="Garden Image" width="183" height="130" /></div>
-                <div id="head-copy"><img src="img/ancillary/headCopy.gif" alt=" " height="130" width="471" /><div>
+                <div id="head-copy"><img src="img/ancillary/headCopy.gif" alt=" " height="130" width="471" /></div>
                 <div id="search-box"><img src="img/ancillary/SearchBox.jpg" alt=" " height="130" width="156" /></div>
                 <div style="clear:both"></div>
             </header>
@@ -35,7 +63,14 @@
                 <div id='b' class="border"></div>
                 <div id='l' class="border"></div>
             </div>
+            <div style="clear:both"></div>
         </div>
+        <footer>
+        	<div id="footer-wrap">
+                <div id="_footer"></div>
+                <div id="_d-shadow"></div>
+             </div>
+        </footer>
 
 		<div id="pop-out"><img src="" alt="" width="430" height="172" usemap="#Map" title="" />
           <map name="Map">
@@ -54,6 +89,8 @@
 
 			jQuery(document).ready(function(){
 				jQuery('#fb-mosaic').load('html/mozaic.html', function(e) {
+					
+					FB.Canvas.setSize({ height: 800 });
 					var mWidth = jQuery('#fb-mosaic').width();
 					var mHeight = jQuery('#fb-mosaic').height();
 					jQuery('.live-cell').on('mouseenter',function() {
