@@ -40,7 +40,13 @@
         	<header>
                 <div id="garden-thumb"><img src="img/ancillary/GardenImgThumb.jpg" alt="Garden Image" width="183" height="130" /></div>
                 <div id="head-copy"><img src="img/ancillary/headCopy.gif" alt=" " height="130" width="471" /></div>
-                <div id="search-box"><img src="img/ancillary/SearchBox.jpg" alt=" " height="130" width="156" /></div>
+                <div id="search-box"><img src="img/ancillary/SearchBox.jpg" alt=" " width="156" height="130" usemap="#Map2" />
+                  <map name="Map2">
+                    <area shape="rect" coords="121,65,148,96" href="javascript:search();" alt="Search for tips...">
+                  </map>
+				<input id="search-box-txt" type="input" value="Search for tips..."/>
+       		  </div>
+                
                 <div style="clear:both"></div>
             </header>
             <div id="mosaic-container">
@@ -52,6 +58,11 @@
             </div>
             <div style="clear:both"></div>
         </div>
+        <div id="pop-out"><img src="" alt="" width="430" height="172" usemap="#Map" title="" />
+          <map name="Map">
+            <area shape="rect" coords="345,0,430,30" href="#" onClick="closeX()">
+          </map>
+		</div>
         <footer>
         	<div id="footer-wrap">
                 <div id="_footer"></div>
@@ -59,11 +70,7 @@
              </div>
         </footer>
 
-		<div id="pop-out"><img src="" alt="" width="430" height="172" usemap="#Map" title="" />
-          <map name="Map">
-            <area shape="rect" coords="345,0,430,30" href="#" onClick="closeX()">
-          </map>
-		</div>
+		
         
         
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -91,7 +98,8 @@
 						var pos = cell.position();
 						
 						//normalise the pop-up box postion
-						var top = pos.top-100;
+						var top = pos.top;
+						console.log(top);
 						var left = pos.left;
 						
 						if(top > mHeight-200)
@@ -110,9 +118,7 @@
 						{
 							left = 28;
 						}
-						
-						
-					
+							
 						popUpBox(top, left);
 					});
 				});
@@ -128,9 +134,36 @@
 			function closeX(){
 				jQuery('#pop-out').clearQueue().hide('fast');
 			}
+		
+			//clear search field when user clicks in the box
+			jQuery('#search-box-txt').on('click', function(){
+				if(jQuery(this).val() == 'Search for tips...')
+					jQuery(this).val('');
+			});
+			
+			//search function
+			function search(){
+				//get the string to be searched
+				var searchVal = jQuery('#search-box-txt').val().toLowerCase();
+				
+				jQuery('.live-cell').each(function(index){
+					var thisAttrTag = jQuery(this).attr('data-tag').toLowerCase();
+					var thisAttrName = jQuery(this).attr('data-Name').toLowerCase();
+					//var thisAttrCopy = jQuery(this).attr('data-copy').toLowerCase();
+					
+					//clear the existing search highlighters
+					jQuery(this).children('div').css('display','none');
+					if(thisAttrName.search(searchVal) > 0 || /*thisAttrCopy.search(searchVal) > 0||*/ thisAttrTag.search(searchVal) > 0)
+					{
+		   				
+						jQuery(this).children('div').css('display','block');
+						
+					}
+				});
+			}
+			
 		</script>
-        
-        
+          
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

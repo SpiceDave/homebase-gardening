@@ -100,6 +100,20 @@ textarea {
 #garden-thumb, #head-copy, #search-box{
 	float:left;
 }
+#search-box{
+	position:relative;
+}
+#search-box-txt{
+	top: 68px;
+	left: 14px;
+	position: absolute;
+	height: 24px;
+	width: 100px;
+	border-width: 0px;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#b2b2b2;
+	font-size:12px;
+}
 #fb-mosaic{
 	width:810px;
 
@@ -116,6 +130,7 @@ textarea {
 }
 .live-cell{
 	cursor:pointer;
+	position:relative;
 }
 #pop-out{
 	background-color:white;
@@ -152,8 +167,8 @@ textarea {
 #l{left:0px; top:0px}
 
 #footer-wrap{
-	top:555px;
-	position:relative;
+	top:685px;
+	position:absolute;
 }
 #_footer{
 	width:810px;
@@ -165,7 +180,15 @@ textarea {
 	width:810px;
 	height:21px;
 }
-
+.highlight{
+	height:11px;
+	width:11px;
+	border: 2px red solid;
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
 
 
 
