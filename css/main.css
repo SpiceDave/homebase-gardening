@@ -92,7 +92,22 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
+#tags, #tags a{
+	font-family: Tahoma, Geneva, sans-serif;
+	color: #b2b2b2;
+	font-size: 12px;
+	text-decoration:none;
+	padding: 10px 0 10px;
+}
+#tags {
+	width:400px;
+	postion:relative;
+	float:right;
+	text-align:right;
+}
+#fb-container{
+	width:810px;
+}
 .fb-head-wrapper{
 	width:810px;
 	height:130px;
@@ -100,19 +115,20 @@ textarea {
 #garden-thumb, #head-copy, #search-box{
 	float:left;
 }
+#garden-thumb{padding-bottom:10px;}
 #search-box{
 	position:relative;
 }
 #search-box-txt{
-	top: 68px;
+	top: 74px;
 	left: 14px;
 	position: absolute;
 	height: 24px;
-	width: 100px;
+	width: 140px;
 	border-width: 0px;
-	font-family:Tahoma, Geneva, sans-serif;
-	color:#b2b2b2;
-	font-size:12px;
+	font-family: Tahoma, Geneva, sans-serif;
+	color: #b2b2b2;
+	font-size: 12px;
 }
 #fb-mosaic{
 	width:810px;
@@ -183,7 +199,7 @@ textarea {
 .highlight{
 	height:11px;
 	width:11px;
-	border: 2px red solid;
+	border: 2px #FF6600 solid;
 	position:absolute;
 	top:0px;
 	left:0px;

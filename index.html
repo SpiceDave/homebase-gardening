@@ -35,18 +35,25 @@
           };
 
         </script>
-
+		
         <div id="fb-container">
         	<header>
                 <div id="garden-thumb"><img src="img/ancillary/GardenImgThumb.jpg" alt="Garden Image" width="183" height="130" /></div>
-                <div id="head-copy"><img src="img/ancillary/headCopy.gif" alt=" " height="130" width="471" /></div>
-                <div id="search-box"><img src="img/ancillary/SearchBox.jpg" alt=" " width="156" height="130" usemap="#Map2" />
+                <div id="head-copy"><img src="img/ancillary/headCopy.gif" alt=" " height="105" width="419" /></div>
+                <div id="search-box"><img src="img/ancillary/SearchBox.jpg" alt=" " width="208" height="105" usemap="#Map2" />
+               
                   <map name="Map2">
-                    <area shape="rect" coords="121,65,148,96" href="javascript:search();" alt="Search for tips...">
+                    <area shape="rect" coords="171,72,198,103" href="javascript:search('search', false);" alt="Search for tips...">
                   </map>
 				<input id="search-box-txt" type="input" value="Search for tips..."/>
        		  </div>
-                
+                 <div id="tags"><strong>Filter by:</strong>&nbsp;&nbsp;&nbsp;
+                	<a href="javascript:search('1');">Plants</a>&nbsp;&nbsp;&nbsp;
+                    <a href="javascript:search('2');">Vegetables</a>&nbsp;&nbsp;&nbsp;
+                    <a href="javascript:search('3');">Lawn</a>&nbsp;&nbsp;&nbsp;
+                    <a href="javascript:search('4');">Trees</a>&nbsp;&nbsp;&nbsp;
+                    <a href="javascript:search('5');">Garden Furniture</a>&nbsp;&nbsp;&nbsp;
+                </div>
                 <div style="clear:both"></div>
             </header>
             <div id="mosaic-container">
@@ -65,7 +72,14 @@
 		</div>
         <footer>
         	<div id="footer-wrap">
-                <div id="_footer"></div>
+                <div id="_footer"><img src="img/ancillary/legal.jpg" alt="Legal" width="810" height="57" usemap="#Map3"  />
+                  <map name="Map3">
+                    <area shape="rect" coords="200,9,278,46" href="#" target="_blank" alt="Privacy Policy">
+                    <area shape="rect" coords="289,9,359,47" href="#" target="_blank" alt="Terms of Use">
+                    <area shape="rect" coords="619,9,704,49" href="http://www.alzheimers.co.uk" target="_blank" alt="Alzheimers.co.uk">
+                    <area shape="rect" coords="716,11,797,50" href="http://www.homebase.co.uk" target="_blank" alt="Homebase.co.uk">
+                  </map>
+                </div>
                 <div id="_d-shadow"></div>
              </div>
         </footer>
@@ -86,11 +100,11 @@
 				
 					var mWidth = jQuery('#fb-mosaic').width();
 					var mHeight = jQuery('#fb-mosaic').height();
+					jQuery('.live-cell').on('mouseleave',function() {
+						jQuery(document).clearQueue();
+					});
 					jQuery('.live-cell').on('mouseenter',function() {
-						/*console.log(jQuery(this).attr('id'));
-						console.log(jQuery(this).attr('data-name'));
-						console.log(jQuery(this).attr('data-tag'));
-						console.log(jQuery(this).attr('data-image'));*/
+						
 												
 						jQuery('#pop-out img').attr('src',jQuery(this).attr('data-image')).attr('title', jQuery(this).attr('data-copy'));
 					
@@ -118,16 +132,23 @@
 						{
 							left = 28;
 						}
-							
+						
 						popUpBox(top, left);
 					});
+					jQuery('#search-box-txt').bind('keypress', function(event){
+						if(event.which == 13)
+						{
+							search('search');
+						}
+					});
+
 				});
 			});
 			
 			
 			function popUpBox(top, left){
-				jQuery('#pop-out').clearQueue().hide('fast', function(){
-					jQuery('#pop-out').delay(500).css({'top':top + 'px', 'left':left}).show('fast');
+				jQuery('#pop-out').clearQueue().hide(0, function(){
+					jQuery('#pop-out').delay(1000).css({'top':top + 'px', 'left':left}).show('fast');
 				});
 			}
 			
@@ -137,29 +158,39 @@
 		
 			//clear search field when user clicks in the box
 			jQuery('#search-box-txt').on('click', function(){
-				if(jQuery(this).val() == 'Search for tips...')
+				if(jQuery(this).val() == 'Search for tips...' || jQuery(this).val() == 'Sorry, no tips found...')
 					jQuery(this).val('');
 			});
 			
 			//search function
-			function search(){
-				//get the string to be searched
-				var searchVal = jQuery('#search-box-txt').val().toLowerCase();
-				
+			function search(searchVal, tag){
+				closeX();
+				var resultsFound = false;
 				jQuery('.live-cell').each(function(index){
+					if(searchVal == 'search')
+					{
+						//get the string to be searched
+						searchVal = jQuery('#search-box-txt').val().toLowerCase();
+					}
+					
 					var thisAttrTag = jQuery(this).attr('data-tag').toLowerCase();
-					var thisAttrName = jQuery(this).attr('data-Name').toLowerCase();
-					//var thisAttrCopy = jQuery(this).attr('data-copy').toLowerCase();
+					var thisAttrName = jQuery(this).attr('data-name').toLowerCase();
+					var thisAttrCopy = jQuery(this).attr('data-copy').toLowerCase();
 					
 					//clear the existing search highlighters
 					jQuery(this).children('div').css('display','none');
-					if(thisAttrName.search(searchVal) > 0 || /*thisAttrCopy.search(searchVal) > 0||*/ thisAttrTag.search(searchVal) > 0)
+					if(thisAttrName.search(searchVal) >= 0 || thisAttrCopy.search(searchVal) >= 0|| thisAttrTag.search(searchVal) >= 0)
 					{
 		   				
 						jQuery(this).children('div').css('display','block');
+						resultsFound = true;
 						
 					}
 				});
+				if(resultsFound == false)
+				{
+					jQuery('#search-box-txt').val('Sorry, no tips found...');
+				}
 			}
 			
 		</script>
