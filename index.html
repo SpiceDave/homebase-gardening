@@ -14,6 +14,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link href="css/smoothness/jquery-ui-1.10.2.custom.css" rel="stylesheet">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -89,6 +90,7 @@
         
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+        <script src="js/jquery-ui-1.10.2.custom.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         
@@ -97,6 +99,10 @@
 
 			jQuery(document).ready(function(){
 				jQuery('#fb-mosaic').load('html/mozaic.html', function(e) {
+					$(function() {
+						$( document ).tooltip();
+					});
+					
 				
 					var mWidth = jQuery('#fb-mosaic').width();
 					var mHeight = jQuery('#fb-mosaic').height();
@@ -106,7 +112,44 @@
 					jQuery('.live-cell').on('mouseenter',function() {
 						
 												
-						jQuery('#pop-out img').attr('src',jQuery(this).attr('data-image')).attr('title', jQuery(this).attr('data-copy'));
+						//jQuery('#pop-out img').attr('src',jQuery(this).attr('data-image')).attr('title', jQuery(this).attr('data-copy'));
+						jQuery(this).attr('title', jQuery(this).attr('data-copy') + ' CLICK TO EXPAND...');
+
+					
+					/*
+						var cell = jQuery(this);
+						var pos = cell.position();
+						
+						//normalise the pop-up box postion
+						var top = pos.top;
+						console.log(top);
+						var left = pos.left;
+						
+						if(top > mHeight-200)
+						{
+							top = mHeight-200;
+						}
+						if(top < 28)
+						{
+							top = 28;
+						}
+						if(left > mWidth-458)
+						{
+							left = mWidth-458;
+						}
+						if(left < 28)
+						{
+							left = 28;
+						}
+						
+						popUpBox(top, left);*/
+					});
+					
+					jQuery('.live-cell').on('click',function() {
+						
+												
+						jQuery('#pop-out img').attr('src',jQuery(this).attr('data-image'));
+						jQuery('.ui-tooltip').hide();
 					
 						var cell = jQuery(this);
 						var pos = cell.position();
@@ -134,6 +177,7 @@
 						}
 						
 						popUpBox(top, left);
+						$( document ).tooltip( "close" );
 					});
 					jQuery('#search-box-txt').bind('keypress', function(event){
 						if(event.which == 13)
@@ -148,7 +192,7 @@
 			
 			function popUpBox(top, left){
 				jQuery('#pop-out').clearQueue().hide(0, function(){
-					jQuery('#pop-out').delay(1000).css({'top':top + 'px', 'left':left}).show('fast');
+					jQuery('#pop-out').delay(0000).css({'top':top + 'px', 'left':left}).show('fast');
 				});
 			}
 			
@@ -194,6 +238,7 @@
 			}
 			
 		</script>
+        
           
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

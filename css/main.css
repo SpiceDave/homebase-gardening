@@ -129,6 +129,7 @@ textarea {
 	font-family: Tahoma, Geneva, sans-serif;
 	color: #b2b2b2;
 	font-size: 12px;
+	padding: 0 0 0 5px;
 }
 #fb-mosaic{
 	width:810px;
@@ -140,8 +141,8 @@ textarea {
 	float: left;
 }
 .mCell img{
-	opacity:0.6;
-	filter:alpha(opacity=6);
+	opacity:0.8;
+	filter:alpha(opacity=8);
 	vertical-align: top;
 }
 .live-cell{
@@ -169,6 +170,8 @@ textarea {
 	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color='#000000');
 	
 }
+
+
 #mosaic-container{
 	position:absolute;
 }
@@ -183,7 +186,7 @@ textarea {
 #l{left:0px; top:0px}
 
 #footer-wrap{
-	top:685px;
+	top:695px;
 	position:absolute;
 }
 #_footer{
