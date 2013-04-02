@@ -113,15 +113,45 @@
 					});
 					jQuery('.live-cell').on('mouseenter',function() {
 						
+												
+						//jQuery('#pop-out img').attr('src',jQuery(this).attr('data-image')).attr('title', jQuery(this).attr('data-copy'));
 						jQuery(this).attr('title', jQuery(this).attr('data-copy') + ' CLICK TO EXPAND...');
 
+					
+					/*
+						var cell = jQuery(this);
+						var pos = cell.position();
+						
+						//normalise the pop-up box postion
+						var top = pos.top;
+						console.log(top);
+						var left = pos.left;
+						
+						if(top > mHeight-200)
+						{
+							top = mHeight-200;
+						}
+						if(top < 28)
+						{
+							top = 28;
+						}
+						if(left > mWidth-458)
+						{
+							left = mWidth-458;
+						}
+						if(left < 28)
+						{
+							left = 28;
+						}
+						
+						popUpBox(top, left);*/
 					});
 					
 					jQuery('.live-cell').on('click',function() {
 						
 												
 						jQuery('#pop-out img').attr('src',jQuery(this).attr('data-image'));
-						
+						jQuery('.ui-tooltip').hide();
 					
 						var cell = jQuery(this);
 						var pos = cell.position();
@@ -163,9 +193,8 @@
 			
 			
 			function popUpBox(top, left){
-				jQuery('#pop-out').clearQueue().hide(100, function(){
-					jQuery('#pop-out').delay(500).css({'top':top + 'px', 'left':left}).show('fast');
-					jQuery('.ui-tooltip').hide();
+				jQuery('#pop-out').clearQueue().hide(0, function(){
+					jQuery('#pop-out').delay(0000).css({'top':top + 'px', 'left':left}).show('fast');
 				});
 			}
 			
@@ -223,3 +252,4 @@
         </script>
     </body>
 </html>
+
