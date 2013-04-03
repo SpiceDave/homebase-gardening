@@ -16,6 +16,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/gig.css">
         <link href="css/smoothness/jquery-ui-1.10.2.custom.css" rel="stylesheet">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -42,7 +43,7 @@
         <div id="fb-container">
         	<header>
                 <div id="garden-thumb"><img src="img/ancillary/GardenImgThumb.jpg" alt="Garden Image" width="183" height="130" /></div>
-                <div id="head-copy"><img src="img/ancillary/headCopy.gif" alt=" " height="105" width="419" /></div>
+                <div id="head-copy"><img src="img/ancillary/headCopy-gig.gif" alt=" " height="105" width="549" /></div>
                 <div id="search-box"><img src="img/ancillary/SearchBox.jpg" alt=" " width="208" height="105" usemap="#Map2" />
                
                   <map name="Map2">
@@ -75,14 +76,6 @@
 		</div>
         <footer>
         	<div id="footer-wrap">
-                <div id="_footer"><img src="img/ancillary/legal.jpg" alt="Legal" width="810" height="57" usemap="#Map3"  />
-                  <map name="Map3">
-                    <area shape="rect" coords="200,9,278,46" href="#" target="_blank" alt="Privacy Policy">
-                    <area shape="rect" coords="289,9,359,47" href="#" target="_blank" alt="Terms of Use">
-                    <area shape="rect" coords="619,9,704,49" href="http://www.alzheimers.co.uk" target="_blank" alt="Alzheimers.co.uk">
-                    <area shape="rect" coords="716,11,797,50" href="http://www.homebase.co.uk" target="_blank" alt="Homebase.co.uk">
-                  </map>
-                </div>
                 <div id="_d-shadow"></div>
              </div>
         </footer>
@@ -113,45 +106,15 @@
 					});
 					jQuery('.live-cell').on('mouseenter',function() {
 						
-												
-						//jQuery('#pop-out img').attr('src',jQuery(this).attr('data-image')).attr('title', jQuery(this).attr('data-copy'));
 						jQuery(this).attr('title', jQuery(this).attr('data-copy') + ' CLICK TO EXPAND...');
 
-					
-					/*
-						var cell = jQuery(this);
-						var pos = cell.position();
-						
-						//normalise the pop-up box postion
-						var top = pos.top;
-						console.log(top);
-						var left = pos.left;
-						
-						if(top > mHeight-200)
-						{
-							top = mHeight-200;
-						}
-						if(top < 28)
-						{
-							top = 28;
-						}
-						if(left > mWidth-458)
-						{
-							left = mWidth-458;
-						}
-						if(left < 28)
-						{
-							left = 28;
-						}
-						
-						popUpBox(top, left);*/
 					});
 					
 					jQuery('.live-cell').on('click',function() {
 						
 												
 						jQuery('#pop-out img').attr('src',jQuery(this).attr('data-image'));
-						jQuery('.ui-tooltip').hide();
+						
 					
 						var cell = jQuery(this);
 						var pos = cell.position();
@@ -193,8 +156,9 @@
 			
 			
 			function popUpBox(top, left){
-				jQuery('#pop-out').clearQueue().hide(0, function(){
-					jQuery('#pop-out').delay(0000).css({'top':top + 'px', 'left':left}).show('fast');
+				jQuery('#pop-out').clearQueue().hide(100, function(){
+					jQuery('#pop-out').delay(500).css({'top':top + 'px', 'left':left}).show('fast');
+					jQuery('.ui-tooltip').hide();
 				});
 			}
 			
@@ -252,4 +216,3 @@
         </script>
     </body>
 </html>
-

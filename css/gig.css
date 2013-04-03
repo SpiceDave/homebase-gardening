@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* CSS Document */
+#fb-mosaic{
+	width:918px;
+	/*margin:11px -11px 11px 11px;*/
+	background-color:white;
+
+}
+#fb-container{
+	width:940px;
+}
+.mCell, .mCell img {
+	width: 17px;
+	height: 17px;
+	float: left;
+}
+
+#mosaic-container{
+	padding:11px;
+	background-color:#060
+}
+
+.highlight{
+	height:13px;
+	width:13px;
+}
+
+#t, #b{width:100%; height:1px; margin-left:-11px;}
+#r, #l{height:651px; width:1px; }
+#t{top:0px;}
+#r{right:0px; top:0px}
+#b{bottom:0px;}
+#l{left:0px; top:0px}
+
+#_d-shadow{
+	background-image:url(../img/ancillary/drop-shadow-gig.jpg);
+	width:940px;
+	height:20px;
+}
+#footer-wrap{
+	top:792px;
+}
