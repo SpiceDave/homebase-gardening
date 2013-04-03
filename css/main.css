@@ -174,6 +174,8 @@ textarea {
 
 #mosaic-container{
 	position:absolute;
+	height:555px;
+	background-color:#060;
 }
 .border{
 	background-color:#374600; position:absolute;
