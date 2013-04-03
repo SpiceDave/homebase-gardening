@@ -25,25 +25,11 @@
         <link href="css/smoothness/jquery-ui-1.10.2.custom.css" rel="stylesheet">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body>
+    <body scroll="no" style="overflow:hidden">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        <div id="fb-root"></div>
-		<script>
-          window.fbAsyncInit = function() {
-            // init the FB JS SDK
-            FB.init({
-              appId      : '544915695549363', // App ID from the App Dashboard
-              channelUrl : 'https://homebase-gardening.herokuapp.com/channel.html', // Channel File for x-domain communication
-              status     : true, // check the login status upon init?
-              cookie     : true, // set sessions cookies to allow your server to access the session?
-              xfbml      : true  // parse XFBML tags on this page?
-            });
-			setTimeout(function(){FB.Canvas.setSize({ height: 1000 })}, 1000);
-          };
 
-        </script>
 		
         <div id="fb-container">
         	<header>
@@ -94,14 +80,5 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         
-          
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
     </body>
 </html>
