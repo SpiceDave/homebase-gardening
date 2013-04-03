@@ -120,7 +120,7 @@ textarea {
 	position:relative;
 }
 #search-box-txt{
-	top: 74px;
+	top: 76px;
 	left: 14px;
 	position: absolute;
 	height: 24px;
@@ -208,11 +208,107 @@ textarea {
 	left:0px;
 	display:none;
 }
+#terms-mask{
+	width:810px;
+	height:100%;
+	background-color: white;
+	opacity:0.5;
+	filter:alpha(opacity=5);
+	position:absolute;
+	top:0px;
+	left:0px;
+}
 
 
 
+#terms {
+	width: 475px;
+	height: 430px;
+	background: white;
+	position: absolute;
+	top: 79px;
+	z-index: 5;
+	left: 143px;
+	box-shadow: 0px 0px 5px #CCC;
+	padding: 20px 25px;
+	overflow: hidden;
+}
+
+#terms .title {
+	/*background: url('../images/titleTC.jpg');*/
+	width: 228px;
+	height: 33px;
+	display: block;
+}
+
+#terms .subtitle {
+	color: #5C5343;
+	font-size: 13px;
+	line-height: 20px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+
+#terms .mask {
+	height: 388px;
+	overflow: auto;
+	position: relative;
+	width: 483px;
+	padding-left: 2px;
+}
+
+#terms ol {
+	color: #5C5343;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: bold;
+	margin-left: -14px;
+	height: auto;
+	/*position: absolute;*/
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
 
 
+#terms ol li {
+	margin-bottom: 20px;
+}
+
+#terms p{
+	font-weight: 400;
+	color: #5C5343;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+#terms .close {
+	top: 12px;
+	right: 12px;
+	cursor: pointer;
+}
+
+.close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	display: block;
+	height: 11px;
+	width: 80px;
+	text-align:right;
+	cursor: pointer;
+}
+
+#terms, #terms-mask{
+	display:none;
+}
 
 
 

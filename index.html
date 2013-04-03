@@ -77,26 +77,60 @@
         	<div id="footer-wrap">
                 <div id="_footer"><img src="img/ancillary/legal.jpg" alt="Legal" width="810" height="57" usemap="#Map3"  />
                   <map name="Map3">
-                    <area shape="rect" coords="200,9,278,46" href="#" target="_blank" alt="Privacy Policy">
-                    <area shape="rect" coords="289,9,359,47" href="#" target="_blank" alt="Terms of Use">
+                    <area shape="rect" coords="200,9,278,46" href="http://www.homebase.co.uk/webapp/wcs/stores/servlet/HomebaseStaticPageSecondLevel?langId=110&storeId=10151&includeName=HBCustomerServiceArticles/privacypolicy.htm" target="_blank" alt="Privacy Policy">
+                    <area shape="rect" coords="289,9,359,47" href="javascript:showTerms();" target="_blank" alt="Terms of Use">
                     <area shape="rect" coords="619,9,704,49" href="http://www.alzheimers.co.uk" target="_blank" alt="Alzheimers.co.uk">
                     <area shape="rect" coords="716,11,797,50" href="http://www.homebase.co.uk" target="_blank" alt="Homebase.co.uk">
                   </map>
                 </div>
                 <div id="_d-shadow"></div>
-             </div>
+          </div>
         </footer>
+        
+        
+    <div id="terms-mask"></div>
+    <div id="terms" class="success" >
+            <a onClick="closeTerms();" class="close">x</a>
+            <span class="title">Terms and Conditions</span>
+            <p class="subtitle">(Consumer Prize share your gardening tips and memories)</p>
+            <div class="mask">
+                <ol>
+                    <li><p>Entrants to the competition are bound by these terms and conditions.</p></li>
+                    <li><p>No purchase necessary.</p></li>
+                    <li><p>The competition is operated by Homebase Limited, 489-499 Avebury Boulevard, Saxon Gate West, Milton Keynes MK9 2NW.</p></li>
+                    <li><p>Entrants to the competition must be resident in the UK or Ireland.</p></li>
+                    <li><p>1st Prize consists of £4,000 Homebase voucher plus the first 1000 entries  received a free packet of seeds – selected at random from the grow your own range.</p></li>
+                    <li><p>Plus every entry we will donate £1 to the Alzheimer’s society* (capped at £3000)</p></li>
+                    <li><p>There is no cash alternative for the prize.</p></li>
+                    <li><p>To enter the competition register/log in to <a target="_blank" href="http://www.facebook.com/homebase/app_310179562389446">http://www.facebook.com/homebase/app_310179562389446</a> and upload a picture with your favourite gardening memory or gardening top tip.</p></li>
+                    <li><p>The winner will be notified via email 28 working days of the closing date. If we do not hear from you within five working days of sending out the Notification, your prize will be forfeited and another winner will be selected and contacted until the prize has been issued.</p></li>
+                    <li><p>The following persons are not eligible to enter the competition: (i) employees of any business involved or associated with the competition (including Home Retail Group) and any other agent representative of Home Retail Group) and (ii) any such person’s family or household members.</p></li>
+                    <li><p>By entering the competition, you hereby warrant and confirm that you are sole owner of the copyright in the Entry and that you have not infringed copyright or intellectual property rights in creating and submitting the Entry to this competition. You also warrant and confirm that Home Retail Group are authorised to use the entry for the purposes stated in the terms and conditions.</p></li>
+                    <li><p>Any information submitted by you must be personal to and relate specifically to you. You warrant and confirm that the information which you submit and/ or distribute will not infringe the intellectual property, privacy, proprietary or any other rights of any third party, and will not contain anything which is libellous, defamatory, obscene, indecent, harassing or threatening. To the fullest extent permitted by the law, Home Retail Group Ltd. does not accept any responsibility for any claims by any third party that arise as a result of submission of information or the Entry for the purposes of this competition.</p></li>
+                    <li><p>By entering the competition, you grant Home Retail Group Ltd. the right to publish and exhibit your Entry. You will retain the copyright in your Entry, however in consideration of their providing the competition, you grant a worldwide, irrevocable, perpetual licence to Home Retail Group Ltd. (including publishers authorised by Home Retail Group) to use the Entry for marketing and advertising purposes including publishing and exhibiting your Entry, on websites or in any other on or offline media. No fees will be payable for any of the above uses. You also agree to take part in post-competition publicity.</p></li>
+                    <li><p>The closing date for this competition is 26th April 2013</p></li>
+                    <li><p>No responsibility is accepted by Home Retail Group Ltd. or its agent for entries incompletely or incorrectly completed or not received for whatever reason. Neither Home Retail Group Ltd. nor any appointed agent will accept responsibility for any technical or other error that might arise whilst submitting an entry, nor for the failure to store any image.</p></li>
+                    <li><p>Any personal data relating to entrants will be used solely in accordance with current UK data protection legislation and will not be disclosed to a third party outside of Home Retail Group Ltd. without the individual’s prior consent.</p></li>
+                    <li><p>Home Retail Group Ltd. reserves the right to verify the eligibility of all entrants.</p></li>
+                    <li><p>In the event of any dispute regarding the competition, the decision of Home Retail Group Ltd.is final and no correspondence or discussion shall be entered into. Home Retail Group Ltd. reserves the right to disqualify any entrant if it has reasonable grounds to believe the entrant has breached any of these terms and conditions.</p></li>
+                    <li><p>Home Retail Group Ltd. may withdraw this competition where necessary if circumstances arise that are beyond its control at any time without notice.</p></li>
+                    <li><p>English law governs these terms and conditions and the English courts will have exclusive jurisdiction over any dispute arising from or in relation to these terms and conditions.</p></li>
+                    <li><p>The promoter is Homebase Limited, 489-499 Avebury Boulevard, Saxon Gate West, Milton Keynes MK9 2NW</p></li>
+                </ol>
+            </div>
+        </div>
+        
 
 		
         
         
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-        <script src="js/jquery-ui-1.10.2.custom.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script src="js/jquery-ui-1.10.2.custom.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
         
-        <script>
+    <script>
 		jQuery('#pop-out').hide();
 
 			jQuery(document).ready(function(){
@@ -212,10 +246,23 @@
 			
 		</script>
         
+        <!-- fb extra script for tc's -->
+        <script>
+			jQuery('#terms-mask').on('click', function(){closeTerms()});
+			function showTerms(){
+				jQuery('#terms-mask').fadeToggle(250);
+				jQuery('#terms').fadeToggle(250);
+			}
+			function closeTerms(){
+				jQuery('#terms-mask').fadeToggle(250);
+				jQuery('#terms').fadeToggle(250);
+			}
+		</script>
+        
           
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
+    <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
