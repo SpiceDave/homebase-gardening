@@ -107,6 +107,7 @@ textarea {
 }
 #fb-container{
 	width:810px;
+	max-width:810px;
 }
 .fb-head-wrapper{
 	width:810px;

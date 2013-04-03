@@ -8,6 +8,7 @@
 }
 #fb-container{
 	width:940px;
+	max-width:940px;
 }
 .mCell, .mCell img {
 	width: 17px;
