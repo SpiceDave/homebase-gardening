@@ -14,7 +14,7 @@ jQuery('#pop-out').hide();
 				});
 				jQuery('.live-cell').on('mouseenter',function() {
 					
-					jQuery(this).attr('title', jQuery(this).attr('data-copy') + ' CLICK TO EXPAND...');
+					jQuery(this).attr('title', jQuery(this).attr('data-name'));
 
 				});
 				
