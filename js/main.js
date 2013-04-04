@@ -2,7 +2,7 @@ jQuery('#pop-out').hide();
 
 		jQuery(document).ready(function(){
 			var date = new Date();
-			jQuery('#fb-mosaic').load('html/mozaic-gig.html?'+ date.getTime(), function(e) {
+			jQuery('#fb-mosaic').load('html/mozaic.html?'+ date.getTime(), function(e) {
 				$(function() {
 					$( document ).tooltip();
 				});
